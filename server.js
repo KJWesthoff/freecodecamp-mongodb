@@ -39,7 +39,6 @@ const TIMEOUT = 10000;
 
 app.use(bodyParser.urlencoded({ extended: "false" }));
 app.use(bodyParser.json());
-
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "views", "index.html"));
 });
@@ -76,11 +75,9 @@ router.use(function (req, res, next) {
 router.post("/mongoose-model", function (req, res, next) {
   // try to create a new instance based on their model
   // verify it's correctly defined in some way
-
-  console.log("body sendt: ", req.body)
   let p;
   p = new Person(req.body);
-  console.log(p)
+  console.log("recevied body: ", req.body)
   res.json(p);
 });
 
