@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 let personSchema = new Schema( {
   name:{type:String, required:true},
   age:{type:Number},
-  favoriteFoods:[{food:String}]
+  favoriteFoods:[{type:String}]
 });
 
 
